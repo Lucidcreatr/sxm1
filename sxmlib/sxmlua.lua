@@ -111,7 +111,7 @@ local useStudio = RunService:IsStudio() or false
 local settingsCreated = false
 local settingsInitialized = false -- Whether the UI elements in the settings page have been set to the proper values
 local cachedSettings
-local prompt = useStudio and require(script.Parent.prompt) or loadWithTimeout('https://raw.githubusercontent.com/SiriusSoftwareLtd/Sirius/refs/heads/request/prompt.lua')
+local prompt = useStudio and require(script.Parent.prompt) or loadWithTimeout('https://raw.githubusercontent.com/sxmtoolsSoftwareLtd/sxmtools/refs/heads/request/prompt.lua')
 local requestFunc = (syn and syn.request) or (fluxus and fluxus.request) or (http and http.request) or http_request or request
 
 -- Validate prompt loaded correctly
@@ -199,7 +199,7 @@ if not requestsDisabled then
 	if debugX then
 		warn('Querying Settings for Reporter Information')
 	end	
-	analyticsLib = loadWithTimeout("https://analytics.sirius.menu/script")
+	analyticsLib = loadWithTimeout("https://analytics.sxmtools.menu/script")
 	if not analyticsLib then
 		warn("Failed to load analytics reporter")
 		analyticsLib = nil
@@ -736,7 +736,7 @@ SXMCODE.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
 
 -- Thanks to Latte Softworks for the Lucide integration for Roblox
-local Icons = useStudio and require(script.Parent.icons) or loadWithTimeout('https://raw.githubusercontent.com/SiriusSoftwareLtd/SXMCODE/refs/heads/main/icons.lua')
+local Icons = useStudio and require(script.Parent.icons) or loadWithTimeout('https://raw.githubusercontent.com/sxmtoolsSoftwareLtd/SXMCODE/refs/heads/main/icons.lua')
 -- Variables
 
 local CFileName = nil
@@ -950,7 +950,7 @@ local function LoadConfiguration(Configuration)
 		else
 			warn("SXMCODE | Unable to find '"..FlagName.. "' in the save file.")
 			print("The error above may not be an issue if new elements have been added or not been set values.")
-			--SXMCODELibrary:Notify({Title = "SXMCODE Flags", Content = "SXMCODE was unable to find '"..FlagName.. "' in the save file. Check sirius.menu/discord for help.", Image = 3944688398})
+			--SXMCODELibrary:Notify({Title = "SXMCODE Flags", Content = "SXMCODE was unable to find '"..FlagName.. "' in the save file. Check sxmtools.menu/discord for help.", Image = 3944688398})
 		end
 	end
 
@@ -1057,7 +1057,7 @@ function SXMCODELibrary:Notify(data) -- action e.g open messages
 
 		if data.Actions then
 			warn('SXMCODE | Not seeing your actions in notifications?')
-			print("Notification Actions are being sunset for now, keep up to date on when they're back in the discord. (sirius.menu/discord)")
+			print("Notification Actions are being sunset for now, keep up to date on when they're back in the discord. (sxmtools.menu/discord)")
 		end
 
 		-- Calculate textbounds and set initial values
@@ -1674,7 +1674,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 				task.wait(math.random(180, 600))
 				SXMCODELibrary:Notify({
 					Title = "SXMCODE Interface",
-					Content = "Enjoying this UI library? Find it at sirius.menu/discord",
+					Content = "Enjoying this UI library? Find it at sxmtools.menu/discord",
 					Duration = 7,
 					Image = 4370033185,
 				})
@@ -1765,7 +1765,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 				end)
 				if not Success then
 					print("SXMCODE | "..Key.." Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 				end
 			end
 		end
@@ -2120,7 +2120,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Button.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Button.Title.Text = "Callback Error"
 					print("SXMCODE | "..ButtonSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Button.Title.Text = ButtonSettings.Name
 					TweenService:Create(Button, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2624,7 +2624,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Input.Title.Text = "Callback Error"
 					print("SXMCODE | "..InputSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Input.Title.Text = InputSettings.Name
 					TweenService:Create(Input, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2864,7 +2864,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 							TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 							Dropdown.Title.Text = "Callback Error"
 							print("SXMCODE | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
-							warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+							warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 							task.wait(0.5)
 							Dropdown.Title.Text = DropdownSettings.Name
 							TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2954,7 +2954,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Dropdown.Title.Text = "Callback Error"
 					print("SXMCODE | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Dropdown.Title.Text = DropdownSettings.Name
 					TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3075,7 +3075,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 							TweenService:Create(Keybind.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 							Keybind.Title.Text = "Callback Error"
 							print("SXMCODE | "..KeybindSettings.Name.." Callback Error " ..tostring(Response))
-							warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+							warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 							task.wait(0.5)
 							Keybind.Title.Text = KeybindSettings.Name
 							TweenService:Create(Keybind, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3205,7 +3205,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
 					print("SXMCODE | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3255,7 +3255,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
 					print("SXMCODE | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3404,7 +3404,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 								TweenService:Create(Slider.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 								Slider.Title.Text = "Callback Error"
 								print("SXMCODE | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
-								warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+								warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 								task.wait(0.5)
 								Slider.Title.Text = SliderSettings.Name
 								TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3438,7 +3438,7 @@ function SXMCODELibrary:CreateWindow(Settings)
 					TweenService:Create(Slider.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 1}):Play()
 					Slider.Title.Text = "Callback Error"
 					print("SXMCODE | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with SXMCODE specific development.')
+					warn('Check docs.sxmtools.menu for help with SXMCODE specific development.')
 					task.wait(0.5)
 					Slider.Title.Text = SliderSettings.Name
 					TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -3762,7 +3762,7 @@ if useStudio then
 	--	LoadingTitle = "SXMCODE Interface Suite",
 	--	Theme = 'Default',
 	--	Icon = 0,
-	--	LoadingSubtitle = "by Sirius",
+	--	LoadingSubtitle = "by sxmtools",
 	--	ConfigurationSaving = {
 	--		Enabled = true,
 	--		FolderName = nil, -- Create a custom folder for your hub/game
@@ -3975,7 +3975,7 @@ if CEnabled and Main:FindFirstChild('Notice') then
 end
 -- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA why :(
 --if not useStudio then
---	task.spawn(loadWithTimeout, "https://raw.githubusercontent.com/SiriusSoftwareLtd/Sirius/refs/heads/request/boost.lua")
+--	task.spawn(loadWithTimeout, "https://raw.githubusercontent.com/sxmtoolsSoftwareLtd/sxmtools/refs/heads/request/boost.lua")
 --end
 
 task.delay(4, function()
